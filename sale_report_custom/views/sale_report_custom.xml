@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th name="th_width" class="text-end">Ancho</th>
+            <th name="th_height" class="text-end">Alto</th>
+        </xpath>
+
+        <xpath expr="//td[@name='td_name']" position="after">
+            <td name="td_width" class="text-end">
+                <span t-field="line.width"/>
+            </td>
+            <td name="td_height" class="text-end">
+                <span t-field="line.height"/>
+            </td>
+        </xpath>
+
+        <xpath expr="//th[@name='th_discount']" position="replace"/>
+        <xpath expr="//th[@name='th_taxes']" position="replace"/>
+        <xpath expr="//td[@name='td_discount']" position="replace"/>
+        <xpath expr="//td[@name='td_taxes']" position="replace"/>
+
+    </template>
+</odoo>
